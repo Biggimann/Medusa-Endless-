@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>{{ project }} ♾️ Dashboard</title>
+  <link rel="icon" href="{{ url_for('static', filename='media/logo.png') }}">
+  <style>
+    *{box-sizing:border-box}
+    body{margin:0;background:#050708;color:#eafff4;font-family:Inter,Arial,sans-serif}
+    header{padding:18px 6%;border-bottom:1px solid #17352a;display:flex;justify-content:space-between;
+      align-items:center;background:#07100d;position:sticky;top:0;z-index:2}
+    .brand{color:#00ff88;font-weight:800;letter-spacing:2px}
+    main{max-width:1120px;margin:42px auto;padding:0 20px}
+    .hero{margin-bottom:28px}
+    h1{font-size:clamp(2rem,6vw,4rem);line-height:1.05;margin:0 0 10px}
+    h2{margin-top:0}
+    .muted{color:#8ba99c}
+    .pill{display:inline-block;padding:7px 12px;border-radius:999px;background:#00ff8815;color:#00ff88}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+    .card{background:#0b1511;border:1px solid #16422f;border-radius:18px;padding:24px;
+      box-shadow:0 0 25px rgba(0,255,136,.06)}
+    .value{font-size:2rem;font-weight:700;margin:8px 0}
+    .tag{font-size:1.35rem}
+    .addr{word-break:break-all;color:#91b7a7;font-size:.9rem}
+    ul{padding-left:20px;line-height:1.8}
+    footer{max-width:1120px;margin:20px auto 50px;padding:0 20px;color:#668477;font-size:.85rem}
+  </style>
+</head>
+<body>
+<header>
+  <div class="brand">MEDUSA ♾️ AI</div>
+  <span class="pill">ACTIVE</span>
+</header>
+
+<main>
+  <section class="hero">
+    <h1>{{ project }} Dashboard</h1>
+    <p class="muted">AI insights, subscription access and digital wallet tools.</p>
+  </section>
+
+  <section class="grid">
+    {% for token in ["BTC","ETH","USDT"] %}
+    <article class="card">
+      <div class="muted">{{ token }} Wallet</div>
+      <div class="value">{{ wallets[token] }}</div>
+      <span class="pill">Available</span>
+    </article>
+    {% endfor %}
+    <article class="card">
+      <div class="muted">User Tag</div>
+      <div class="value tag">{{ wallets.tag }}</div>
+    </article>
+  </section>
+
+  <section class="card" style="margin-top:18px">
+    <h2>Subscription</h2>
+    <p>{{ terms }}</p>
+    <p class="muted">Renewal: {{ renewal }}</p>
+    <p class="addr">Payment address: {{ address }}</p>
+  </section>
+
+  <section class="card" style="margin-top:18px">
+    <h2>Benefits</h2>
+    <ul>{% for benefit in benefits %}<li>{{ benefit }}</li>{% endfor %}</ul>
+  </section>
+</main>
+
+<footer>Medusa ♾️ AI — wallet values shown by this deployment are in-memory application data.</footer>
+</body>
+</html>

@@ -1,0 +1,4 @@
+Medusa AI
+
+Flask production web service.
+Render entrypoint: main:app

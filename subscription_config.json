@@ -1,0 +1,24 @@
+{
+  "project": "Medusa AI",
+  "overview": "Subscription-based AI insights and tools with integrated crypto wallets (BTC, ETH, USDT).",
+  "subscription_terms": {
+    "access": "Exclusive updates, early features, private releases",
+    "payment": {
+      "method": "BTC/ETH/USDT",
+      "recipient_address": "bc1qce4ev8adzvx4vnu6hu34la9u92ydmpp9xzhvcd",
+      "renewal": "Monthly"
+    }
+  },
+  "benefits": [
+    "Exclusive Features",
+    "Community Access",
+    "Weekly Updates",
+    "Dedicated Wallets for BTC, ETH, USDT",
+    "Token Swaps and Peer Payments"
+  ],
+  "notes": [
+    "Payments are non-refundable",
+    "Ensure crypto transfers are correct",
+    "Misuse may result in termination"
+  ]
+}

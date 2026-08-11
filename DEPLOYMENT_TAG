@@ -1,0 +1,4 @@
+MEDUSA AI — FLEXIBLE MULTI-PLATFORM BUILD
+Compatible deployment targets: Render + Heroku
+Python version: intentionally not hard-pinned; platform selects a supported version.
+Start command: gunicorn main:app
